@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   chatContent: {
     padding: 12,
     paddingRight: 18,
-    backgroundColor: colors.cardLight,
+    backgroundColor: colors.white,
     maxWidth: '70%',
     borderRadius: 10,
     borderBottomRightRadius: 0,

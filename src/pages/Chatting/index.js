@@ -19,7 +19,7 @@ const Chatting = ({navigation, route}) => {
 
   useEffect(() => {
     getDataUserFromLocal();
-    const chatusernmechanicByID = `${user.uid}_${dataMechanic.data.uid}`;
+    const chatusernmechanicByID = `${dataMechanic.data.uid}_${user.uid}`;
     const urlFirebase = `chatting/${chatusernmechanicByID}/allChat/`;
     Fire.database()
       .ref(urlFirebase)
@@ -148,7 +148,7 @@ const Chatting = ({navigation, route}) => {
 export default Chatting;
 
 const styles = StyleSheet.create({
-  page: {backgroundColor: colors.white, flex: 1},
+  page: {backgroundColor: colors.cardLight, flex: 1},
   content: {flex: 1},
   chatDate: {
     fontSize: 11,
