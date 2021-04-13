@@ -11,18 +11,21 @@ const Messages = ({navigation}) => {
 
   useEffect(() => {
     getDataUserFromLocal();
-    const rootDB = Fire.database().ref();
     const urlHistory = `messages/${user.uid}/`;
+    const rootDB = Fire.database().ref();
     const messagesDB = rootDB.child(urlHistory);
 
     messagesDB.on('value', async snapshot => {
       if (snapshot.val()) {
+        console.log('data history : ', snapshot.val());
         const oldData = snapshot.val();
         const data = [];
 
         const promises = await Object.keys(oldData).map(async key => {
           const urlUidMechanic = `users/${oldData[key].uidPartner}`;
-          const detailMechanic = await rootDB.child(urlUidMechanic).once('value');
+          const detailMechanic = await rootDB
+            .child(urlUidMechanic)
+            .once('value');
           data.push({
             id: key,
             detailMechanic: detailMechanic.val(),
@@ -46,7 +49,7 @@ const Messages = ({navigation}) => {
     <View style={styles.page}>
       <View style={styles.content}>
         <Text style={styles.title}>Messages</Text>
-        {historyChat.map(chat => {
+                {historyChat.map(chat => {
           const dataMechanic = {
             id: chat.detailMechanic.uid,
             data: chat.detailMechanic,

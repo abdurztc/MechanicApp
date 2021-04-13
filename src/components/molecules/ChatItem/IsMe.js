@@ -16,7 +16,11 @@ const IsMe = ({text, date}) => {
 export default IsMe;
 
 const styles = StyleSheet.create({
-  container: {marginBottom: 20, alignItems: 'flex-end', paddingRight: 16},
+  container: {
+    marginBottom: 20,
+    alignItems: 'flex-end',
+    paddingRight: 16,
+  },
   chatContent: {
     padding: 12,
     paddingRight: 18,

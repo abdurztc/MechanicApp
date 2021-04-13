@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
@@ -15,7 +16,9 @@ import {
   UpdateProfile,
   UploadPhoto,
   UserProfile,
+  News,
 } from '../pages';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -25,7 +28,7 @@ const MainApp = () => {
     <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Menu" component={Menu} />
       <Tab.Screen name="Chat" component={Messages} />
-      <Tab.Screen name="Profile" component={UserProfile} />
+      {/* <Tab.Screen name="Profile" component={UserProfileTab} /> */}
     </Tab.Navigator>
   );
 };
@@ -81,6 +84,11 @@ const Router = () => {
       <Stack.Screen
         name="UpdateProfile"
         component={UpdateProfile}
+        options={{headerShown: false}}
+      />
+       <Stack.Screen
+        name="News"
+        component={News}
         options={{headerShown: false}}
       />
       <Stack.Screen

@@ -21,6 +21,7 @@ export default Other;
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
+    marginRight: 120,
     alignItems: 'flex-end',
     paddingLeft: 16,
     flexDirection: 'row',
@@ -30,7 +31,6 @@ const styles = StyleSheet.create({
     padding: 12,
     paddingRight: 18,
     backgroundColor: colors.primary,
-    maxWidth: '80%',
     borderRadius: 10,
     borderBottomLeftRadius: 0,
   },

@@ -11,7 +11,7 @@ import Chatting from './Chatting';
 import UserProfile from './UserProfile';
 import UpdateProfile from './UpdateProfile';
 import MechanicProfile from './MechanicProfile';
-
+import News from './News';
 export {
   Splash,
   GetStarted,
@@ -24,6 +24,7 @@ export {
   ChooseMechanic,
   Chatting,
   UserProfile,
+  News,
   UpdateProfile,
   MechanicProfile,
 };

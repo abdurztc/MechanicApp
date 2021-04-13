@@ -1,16 +1,18 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {colors, fonts} from '../../../utils';
 
-const NewsItem = ({title, date, image}) => {
+const NewsItem = ({title, date, urlToImage, onPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.titleWrapper}>
-        <Text style={styles.title}>{title}</Text>
+        <Text numberOfLines={2} style={styles.title}>
+          {title}
+        </Text>
         <Text style={styles.date}>{date}</Text>
       </View>
-      <Image source={{uri: image}} style={styles.image} />
-    </View>
+      <Image source={urlToImage} style={styles.image} />
+    </TouchableOpacity>
   );
 };
 
